@@ -1,0 +1,58 @@
+{% extends "docrequest.html" %}
+{% block content %}
+
+<div class="depertment_area" style="padding-bottom: 320px;padding-top: 60px;">
+    <div class="container">
+        <div class="row custom_align align-items-end justify-content-between">
+
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="depart_ment_tab mb-30">
+                    {% with messages = get_flashed_messages() %}
+                    {% if messages %}
+                    <ul class=flashes>
+                        {% for message in messages %}
+                        <center><b>{{ message }}</b></center>
+                        {% endfor %}
+                    </ul>
+                    {% endif %}
+                    {% endwith %}
+                    <center>
+                        <br>
+                        <br>
+                        <h2>Patients Cognitive Test Score</h2>
+                        <div>
+                            <table style="width:50%">
+                                <tr>
+                                    {% for i in cols %}
+                                    <th>
+                                        <a><b style="color:black;text-align:center;">{{ i }}</b></a>
+                                    </th>
+
+                                    {% endfor %}
+
+
+                                </tr>
+                                {% for row in rows %}
+                                <tr>
+                                    {% for value in row %}
+                                    <td>
+                                        <a style="text-align:center;"><b style="color:grey;">{{ value }}</b></a>
+                                    </td>
+                                    {% endfor %}
+
+                                </tr>
+                                {% endfor %}
+                            </table>
+
+                        </div>
+                    </center>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

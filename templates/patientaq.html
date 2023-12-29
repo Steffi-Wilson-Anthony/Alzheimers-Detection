@@ -1,0 +1,49 @@
+{% extends "patienthome.html" %}
+{% block content %}
+<div class="book_apointment_area">
+    <div class="container">
+        <h3>Cognitive Test</h3>
+
+        <form action="{{ url_for('mycognitivetest') }}" method="POST">
+            {% for row in rows %}
+            <h5>{{ row[0] }}. {{ row[1] }}</h5>
+            <input type="radio" name="{{row[0]}}" value="a">
+            <label><b>{{ row[2] }}</b></label>
+            <input type="radio" name="{{row[0]}}" value="b">
+            <label><b>{{ row[3] }}</b></label>
+            <input type="radio" name="{{row[0]}}" value="c">
+            <label><b>{{ row[4] }}</b></label>
+            <input type="radio" name="{{row[0]}}" value="d">
+            <label><b>{{ row[5] }}</b></label>
+            {% endfor %}
+            <br>
+            <input class="btn btn-primary" type="submit">
+        </form>
+    </div>
+</div>
+
+<script>
+    function insertValues() {
+        var radios = document.querySelectorAll('input[type="radio"]:checked');
+        var slno = document.getElementById("slno").value;
+        alert(slno);
+        console.log(slno);
+
+
+
+        var selectedValues = [];
+
+        radios.forEach(function (radio) {
+            selectedValues.push(radio.value);
+        });
+
+        var hiddenInput = document.createElement('input');
+        hiddenInput.setAttribute('type', 'hidden');
+        hiddenInput.setAttribute('name', 'selectedValues');
+        hiddenInput.setAttribute('value', JSON.stringify(selectedValues));
+        document.querySelector('form').appendChild(hiddenInput);
+    }
+</script>
+
+
+{% endblock %}

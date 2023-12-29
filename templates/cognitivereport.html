@@ -1,0 +1,33 @@
+{% extends "patienthome.html" %}
+
+{% block content %}
+
+<div class="book_apointment_area" style="padding-bottom: 40%;">
+
+    <div class="container">
+        <center>
+            <table width="100%;">
+                {% for i in cols %}
+
+                <th>
+                    {{i}}
+                </th>
+
+
+                {% endfor %}
+
+                {% for j in data %}
+                <tr>
+                    {% for k in j %}
+                    <td>{{k}}</td>
+                    {% endfor %}
+
+                </tr>
+                {% endfor %}
+            </table>
+        </center>
+    </div>
+</div>
+
+
+{% endblock %}

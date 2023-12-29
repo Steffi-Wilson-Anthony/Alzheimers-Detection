@@ -1,0 +1,33 @@
+{% extends "patienthome.html" %}
+{% block content %}
+<div class="book_apointment_area">
+    <div class="container" style="margin-right: 0px;margin-left: 0px;padding-right: 0px;padding-left: 0px;">
+
+        <div class="col-lg-7">
+            <div class="popup_box " style="margin-left: 292px;">
+                <div class="popup_inner">
+
+                    <center><b>{{ msg }}</b></center>
+
+                    <h2><span>View Prescription Page</span></h2>
+                    <form action="{{url_for('myreport')}}" method="post">
+                        <div class="col-xl-9">
+                            <select name="docemail">
+                                <option>Select Doctor</option>
+                                {% for i in data %}
+                                <option value="{{i[0]}}">{{i[0]}}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        <div class="col-xl-9">
+                            <button type="submit" class="boxed-btn3">Submit</button>
+                        </div>
+                    </form>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

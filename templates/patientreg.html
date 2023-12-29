@@ -1,0 +1,43 @@
+{% extends "proceed.html" %}
+{% block content %}
+<div class="book_apointment_area" style="padding-top: 4rem;padding-bottom: 95px;">
+    <div class="container">
+        <center> {{ msg }} </center>
+        <div class="row justify-content-center">
+            <div class="col-lg-7">
+                <div class="popup_box " style="padding-top: 4rem;border-radius:20px;">
+                    <div class="popup_inner">
+                        <h4>
+                            <span style="color:grey;">REGISTRATION FORM</span>
+                        </h4>
+                        <form action="{{url_for('Patientreg')}}" method="post">
+                            <div class="row">
+                                <div class="col-xl-6">
+                                    <input type="text" placeholder="YOUR NAME" name="Name">
+                                </div>
+                                <div class="col-xl-6">
+                                    <input type="number" placeholder="YOUR AGE" name="Age">
+                                </div>
+                                <div class="col-xl-6">
+                                    <input type="email" placeholder="YOUR EMAIL" name="Email">
+                                </div>
+                                <div class="col-xl-6">
+                                    <input type="password" placeholder="PASSWORD" name="Password">
+                                </div>
+                                <div class="col-xl-6">
+                                    <input type="password" placeholder="CONFIRM PASSWORD" name="Con_Password">
+                                </div>
+                                <div class="col-xl-06" style="text-align:center;">
+                                    <button type="submit" class="btn btn-primary">Click to
+                                        Register</button>
+                                </div>
+                            </div>
+                        </form>
+                        <center>If you have account <a href="{{url_for('Patientlog')}}">Login</a></center>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

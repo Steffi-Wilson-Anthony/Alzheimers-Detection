@@ -1,0 +1,51 @@
+{% extends "uploadfile.html" %}
+
+{% block content %}
+
+<div class="container" style="margin-top:15rem">
+    <center>
+        <div class="card text-bg-success mb-3" style="max-width: 80rem;height: 30rem;">
+            <div class="card-header">AQ</div>
+            <div class="card-body">
+
+                <br>
+                <center>
+
+                    <div class="card">
+                        <div class="card-body" style="height: 340px;overflow:scroll;">
+                            <div class="mb-3">
+
+                                {% for i in data %}
+                                {% if i[3] == doctoremail %}
+                                <div style="text-align:left;"> {{ i[3] }} : {{i[4]}}</div>
+                                {% endif %}
+                                {% if i[1] == r %}
+                                <div style="text-align:right;"> {{i[2]}} : {{i[1]}}</div>
+                                {% endif %}
+                                {% endfor %}
+
+
+                            </div>
+                        </div>
+                </center>
+
+
+                <form action="{{url_for('aqquestion',r=r)}}" method="POST">
+                    <div>
+
+
+
+                        <input type="hidden" name="docemail" value="{{docemail}}">
+                        <input type="hidden" name="patemail" value="{{patemail}}">
+                        <input type="text" name="question" placeholder="Enter message">
+                        <input type="submit" class="btn btn-secondary" value="Submit">
+                    </div>
+
+
+                </form>
+    </center>
+</div>
+</div>
+</center>
+</div>
+{% endblock %}

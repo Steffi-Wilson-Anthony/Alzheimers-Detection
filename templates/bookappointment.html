@@ -1,0 +1,68 @@
+{% extends "patienthome.html" %}
+{% block content %}
+<div class="row justify-content-center">
+  <div class="col-lg-6">
+    <div class="popup_box" style="padding-top: 2rem; padding-bottom: 2px">
+      <div class="popup_inner">
+        <h4>
+          Appointment
+        </h4>
+        <center><b>{{ msg }}</b></center>
+        <form action="{{url_for('patientreq')}}" method="post">
+          <div class="row">
+            <div class="col-xl-12">
+              <input type="text" placeholder="Your name" name="Name" value="{{name}}" />
+            </div>
+            <div class="col-xl-12">
+
+              <select class="col-xl-12" name="docname">
+                <option>Select Doctor</option>
+                {% for i in data %}
+                <option value="{{i[0]}}" style="color:black">{{i[0]}}</option>
+                {% endfor %}
+              </select>
+            </div>
+            <div class="col-xl-12">
+              <select class="form-select wide" class="" name="dept" required>
+                <option data-display="Please select Department to visit">Please select Department to visit </option>
+                <option value="Pulmonary">Pulmonary</option>
+                <option value="Cardiology">Cardiology</option>
+                <option value="Neurology">Neurology</option>
+                <option value="Traumatology">Traumatology</option>
+                <option value="Dental">Dental</option>
+                <option value="Nuclear">Nuclear</option>
+                <option value="magnetic">magnetic</option>
+                <option value="Pregnancy">Pregnancy</option>
+                <option value="For disabled">For disabled</option>
+                <option value="X-ray">X-ray</option>
+                <option value="Prostheses">Prostheses</option>
+                <option value="Orthopedic">Orthopedic</option>
+                <option value="Dermatologist">Dermatologist</option>
+                <option value="Medical Specialist">Medical Specialist</option>
+              </select>
+            </div>
+
+            <div class="col-xl-6">
+              <input type="text" placeholder="Your age" name="Age" value="{{ age }}" />
+            </div>
+            <div class="col-xl-6">
+              <input placeholder="Symptoms" name="symptoms" type="text" required />
+            </div>
+            <div class="col-xl-6">
+              <input class="datepicker" placeholder="Appointment Date" name="AppointmentDate" type="text" required />
+            </div>
+            <div class="col-xl-6">
+              <input class="timepicker" placeholder="Suitable time" name="Time" type="text" required />
+            </div>
+            <div class="col-xl-12">
+              <button type="submit" class="boxed-btn3">
+                Make an Appointment
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,240 @@
+{% extends "proceed.html" %}
+
+
+
+{% block content %}
+<div class="depertment_area" style="padding-top:50px; padding-bottom: 250px;">
+    <div class="container" style="padding-top:150px;">
+        <center>
+            <h5 class="card-title">AQ TEST</h5>
+        </center>
+        <div class="card" style="width: 65rem;">
+            <center>
+                <div class="card-body">
+                    <h3 class="card-title">Memory </h3>
+                    <form action="aqtest" method="post">
+                        <div class="mb-3">
+                            <p><b>Does your loved ones have memory loss ?</b></p>
+                            <select class="form-control" name="m1" id="exampleFormControlInput1"
+                                style="text-align:center">
+                                <option value="1">Yes</option>
+                                <option value="0" selected>No</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <p><b>If so, is their memory worse than a few years ago ?</b></p>
+                            <select class="form-control" name="m2" id="exampleFormControlInput1"
+                                style="text-align:center">
+                                <option value="1">Yes</option>
+                                <option value="0" selected>No</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-3">
+                            <p><b>Does the patient repeat questions or stories in the same day ?</b></p>
+                            <select class="form-control" id="exampleFormControlInput1" name="m3"
+                                style="text-align:center">
+                                <option value="2">Yes</option>
+                                <option value="0" selected>No</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-3">
+                            <p><b>Have you had to take over tracking events or appointments Or does patient forget
+                                    appointments ?</b></p>
+                            <select class="form-control" id="exampleFormControlInput1" name="m4"
+                                style="text-align:center">
+                                <option value="1">Yes</option>
+                                <option value="0" selected>No</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <p><b>Does the patient misplace items more than once a month Or Does the patient misplace
+                                    objects so that he or she cannot find them ?</b></p>
+                            <select class="form-control" id="exampleFormControlInput1" name="m5"
+                                style="text-align:center">
+                                <option value="1">Yes</option>
+                                <option value="0" selected>No</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-3">
+                            <p><b>Does the patient suspect others are moving, hiding or stealing items when they cannot
+                                    find
+                                    them ?</b></p>
+                            <select class="form-control" id="exampleFormControlInput1" name="m6"
+                                style="text-align:center">
+                                <option value="1">Yes</option>
+                                <option value="0" selected>No</option>
+                            </select>
+                        </div>
+                        <h3 class="card-title">Orientation </h3>
+                        <div class="mb-3">
+                            <p><b>Does the patient frequently have trouble knowing the day, date, month, year, time? Or
+                                    does
+                                    the patient have to use cues like the newspaper or the calendar to know the day and
+                                    date
+                                    more than once a day ?</b></p>
+                            <select class="form-control" id="exampleFormControlInput1" name="o1"
+                                style="text-align:center">
+                                <option value="2">Yes</option>
+                                <option value="0" selected>No</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-3">
+                            <p><b>Does the patient become disoriented in unfamiliar places ?</b></p>
+                            <select class="form-control" id="exampleFormControlInput1" name="o2"
+                                style="text-align:center">
+                                <option value="1">Yes</option>
+                                <option value="0" selected>No</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-3">
+                            <p><b>Does the patient become more confused outside the home Or when traveling ?</b></p>
+                            <select class="form-control" id="exampleFormControlInput1" name="o3"
+                                style="text-align:center">
+                                <option value="1">Yes</option>
+                                <option value="0" selected>No</option>
+                            </select>
+                        </div>
+
+                        <h3 class="card-title">Functional Ability </h3>
+                        <div class="mb-3">
+                            <p><b>Excluding physical limitations(e.g., tremor, hemiparesis, etc)does the patient have
+                                    trouble handling money (tips, calculating change) ?</b></p>
+                            <select class="form-control" name="fa1" id="exampleFormControlInput1"
+                                style="text-align:center">
+                                <option value="1">Yes</option>
+                                <option value="0" selected>No</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <p><b>. Excluding physical limitations (e.g., tremor, hemiparesis, etc) does the patient
+                                    have
+                                    trouble paying bills or doing finances OR Are Family members taking over finances
+                                    because of concerns about ability ?</b></p>
+                            <select class="form-control" name="fa2" id="exampleFormControlInput1"
+                                style="text-align:center">
+                                <option value="2">Yes</option>
+                                <option value="0" selected>No</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-3">
+                            <p><b>Does the patient have trouble remembering to take medications or tracking medications
+                                    taken ?</b></p>
+                            <select class="form-control" name="fa3" id="exampleFormControlInput1"
+                                style="text-align:center">
+                                <option value="1">Yes</option>
+                                <option value="0" selected>No</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-3">
+                            <p><b>Is the patient having difficulty driving? OR Are you concerned about the patient’s
+                                    driving
+                                    ?</b></p>
+                            <select class="form-control" name="fa4" id="exampleFormControlInput1"
+                                style="text-align:center">
+                                <option value="1">Yes</option>
+                                <option value="0" selected>No</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-3">
+                            <p><b>Is the patient having trouble using appliances (e.g microwave oven, stove, remote
+                                    control,
+                                    telephone, alarm clock) ?</b></p>
+                            <select class="form-control" name="fa5" id="exampleFormControlInput1"
+                                style="text-align:center">
+                                <option value="1">Yes</option>
+                                <option value="0" selected>No</option>
+                            </select>
+                        </div>
+
+
+                        <div class="mb-3">
+                            <p><b>Excluding physical limitations, is the patient having difficulty in completing home
+                                    repair
+                                    or other home related tasks ?</b></p>
+                            <select class="form-control" name="fa6" id="exampleFormControlInput1"
+                                style="text-align:center">
+                                <option value="1">Yes</option>
+                                <option value="0" selected>No</option>
+                            </select>
+                        </div>
+
+
+                        <div class="mb-3">
+                            <p><b>Excluding physical limitations, has the patient given up or significantly reduced
+                                    activities such as golfing, dancing, exercising or crafts ?</b></p>
+                            <select class="form-control" name="fa7" id="exampleFormControlInput1"
+                                style="text-align:center">
+                                <option value="1">Yes</option>
+                                <option value="0" selected>No</option>
+                            </select>
+                        </div>
+
+                        <h3 class="card-title">Visuospatial </h3>
+
+                        <div class="mb-3">
+                            <p><b>Is the patient getting lost in familiar surroundings (Own neighbourhood) ?</b></p>
+                            <select class="form-control" name="v1" id="exampleFormControlInput1"
+                                style="text-align:center">
+                                <option value="2">Yes</option>
+                                <option value="0" selected>No</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-3">
+                            <p><b>Does the patient have a decreased sense of direction Language ?</b></p>
+                            <select class="form-control" name="v2" id="exampleFormControlInput1"
+                                style="text-align:center">
+                                <option value="1">Yes</option>
+                                <option value="0" selected>No</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <p><b>Does the patient have trouble finding words other than names ?</b></p>
+                            <select class="form-control" name="v3" id="exampleFormControlInput1"
+                                style="text-align:center">
+                                <option value="1">Yes</option>
+                                <option value="0" selected>No</option>
+                            </select>
+                        </div>
+
+
+                        <div class="mb-3">
+                            <p><b>Does the patient confuse names of family members or friends ?</b></p>
+                            <select class="form-control" name="v4" id="exampleFormControlInput1"
+                                style="text-align:center">
+                                <option value="2">Yes</option>
+                                <option value="0" selected>No</option>
+                            </select>
+                        </div>
+
+
+                        <div class="mb-3">
+                            <p><b>Does the patient have difficulty recognizing people familiar to him/her ?</b></p>
+                            <select class="form-control" name="v5" id="exampleFormControlInput1"
+                                style="text-align:center">
+                                <option value="2">Yes</option>
+                                <option value="0" selected>No</option>
+                            </select>
+                        </div>
+                        <div class="col-auto">
+                            <button type="submit" class="btn btn-primary mb-3">submit</button>
+                        </div>
+                    </form>
+
+
+
+                </div>
+            </center>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

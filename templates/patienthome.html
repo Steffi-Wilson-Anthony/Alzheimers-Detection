@@ -1,0 +1,139 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Medi</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- <link rel="manifest" href="site.webmanifest"> -->
+    <link rel="shortcut icon" type="image/x-icon" href="{{url_for('static',filename='img/favicon.png')}}">
+    <!-- Place favicon.ico in the root directory -->
+
+    <!-- CSS here -->
+    <link rel="stylesheet" href="{{url_for('static',filename='css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/owl.carousel.min.css')}}">
+    <link rel="stylesheet" href="{{url_for('static' ,filename='css/magnific-popup.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/font-awesome.min.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/themify-icons.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/nice-select.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/flaticon.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/gijgo.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/animate.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/slicknav.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">
+    <!--     <link rel="stylesheet" href="css/responsive.css"> -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js"
+        integrity="sha384-zYPOMqeu1DAVkHiLqWBUTcbYfZ8osu1Nd6Z89ify25QV9guujx43ITvfi12/QExE"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js"
+        integrity="sha384-Y4oOpwW3duJdCWv5ly8SCFYWqFDsfob/3GkgExXKV4idmbt98QcxXYs9UoXAB7BZ"
+        crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand">
+        <div class="container-fluid" style="background-color:blue">
+            <h3 style="color:white">Alzhimate</h3>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="d-flex" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a style="color:white;" class="nav-link active"
+                            href="{{url_for('viewmyappointments')}}">View Appointments</a></li>
+                    <li class="nav-item"><a style="color:white;" class="nav-link active"
+                            href="{{url_for('viewreport')}}">View Report</a></li>
+                    <li class="nav-item"><a style="color:white;" class="nav-link active"
+                            href="{{url_for('myreport')}}">Prescription</a></li>
+                    <li class="nav-item"><a style="color:white;" class="nav-link active"
+                            href="{{url_for('patientaq')}}">Cognitive test </a></li>
+
+                    <li class="nav-item"><a style="color:white;" class="nav-link active"
+                            href="{{url_for('cognitivereport')}}">Cognitive report </a></li>
+                    <li class="nav-item"><a style="color:white;" class="nav-link active"
+                            href="{{url_for('logout')}}">Logout</a></li>
+                    <li class="nav-item"><a style="color:white;" class="nav-link active" aria-current="page" href="#"
+                            hidden>Home</a></li>
+
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- header-end -->
+    {% block content %}
+    <div class="book_apointment_area" style="padding-bottom: 40%;">
+
+        <div class="container">
+            <table width="100%;">
+                {% for i in cols %}
+
+                <th>
+                    {{i}}
+                </th>
+
+
+                {% endfor %}
+
+                {% for j in rows %}
+                <tr>
+                    {% for k in j %}
+                    <td>{{k}}</td>
+                    {% endfor %}
+                    <td><a href="{{url_for('bookappointment',id=j[0])}}" class="btn btn-success">Appointment</a></td>
+                </tr>
+                {% endfor %}
+
+
+            </table>
+        </div>
+    </div>
+    {% endblock %}
+
+    <!-- JS here -->
+    <script src="{{url_for('static',filename='js/vendor/modernizr-3.5.0.min.js')}}"></script>
+    <script src="{{url_for('static',filename='js/vendor/jquery-1.12.4.min.js')}}"></script>
+    <script src="{{url_for('static',filename='js/popper.min.js')}}"></script>
+    <script src="{{url_for('static',filename='js/bootstrap.min.js')}}"></script>
+    <script src="{{url_for('static',filename='js/owl.carousel.min.js')}}"></script>
+    <script src="{{url_for('static',filename='js/isotope.pkgd.min.js')}}"></script>
+    <script src="{{url_for('static',filename='js/ajax-form.js')}}"></script>
+    <script src="{{url_for('static',filename='js/waypoints.min.js')}}"></script>
+    <script src="{{url_for('static',filename='js/jquery.counterup.min.js')}}"></script>
+    <script src="{{url_for('static',filename='js/imagesloaded.pkgd.min.js')}}"></script>
+    <script src="{{url_for('static',filename='js/scrollIt.js')}}"></script>
+    <script src="{{url_for('static',filename='js/jquery.scrollUp.min.js')}}"></script>
+    <script src="{{url_for('static',filename='js/wow.min.js')}}"></script>
+    <script src="{{url_for('static',filename='js/nice-select.min.js')}}"></script>
+    <script src="{{url_for('static',filename='js/jquery.slicknav.min.js')}}"></script>
+    <script src="{{url_for('static',filename='js/jquery.magnific-popup.min.js')}}"></script>
+    <script src="{{url_for('static',filename='js/plugins.js')}}"></script>
+    <script src="{{url_for('static',filename='js/gijgo.min.js')}}"></script>
+    <!--contact js-->
+    <script src="{{url_for('static',filename='js/contact.js')}}"></script>
+    <script src="{{url_for('static',filename='js/jquery.ajaxchimp.min.js')}}"></script>
+    <script src="{{url_for('static',filename='js/jquery.form.js')}}"></script>
+    <script src="{{url_for('static',filename='js/jquery.validate.min.js')}}"></script>
+    <script src="{{url_for('static',filename='js/mail-script.js')}}"></script>
+
+    <script src="{{url_for('static',filename='js/main.js')}}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
+
+
+</body>
+
+</html>

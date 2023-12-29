@@ -1,0 +1,54 @@
+{% extends "proceed.html" %}
+
+{% block content %}
+<div class="depertment_area" style="padding-top:50px; padding-bottom: 250px;">
+    <div class="container" style="padding-top:150px;margin-left:30px;">
+        <center>
+            <h5 class="card-title">AQ TEST</h5>
+        </center>
+        <div class="card" style="width: 88rem;">
+            <center>
+                <h1>Your Marks {{total}}</h1>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="card text-bg-primary mb-3"
+                            style="max-width: 18rem;margin-left:20px;border-radius:100px">
+
+                            <div class="card-body">
+                                <h5 class="card-title">Non-Demented</h5>
+                                <p class="card-text" style="color:white">Marks Between (0-5)</p>
+                            </div>
+                        </div>
+                        <div class="card text-bg-secondary mb-3"
+                            style="max-width: 18rem;margin-left:70px;border-radius:100px">
+
+                            <div class="card-body">
+                                <h5 class="card-title">Mild-Demented</h5>
+                                <p class="card-text" style="color:white">Marks Between(6-10)</p>
+                            </div>
+                        </div>
+
+                        <div class="card text-bg-success mb-3"
+                            style="max-width: 18rem; margin-left:70px;border-radius:100px">
+
+                            <div class="card-body">
+                                <h5 class="card-title">Moderate-Demented</h5>
+                                <p class="card-text" style="color:white">Marks Between(11-15)</p>
+                            </div>
+                        </div>
+                        <div class="card text-bg-info smb-3"
+                            style="max-width: 18rem;margin-left:70px;border-radius:100px">
+
+                            <div class="card-body">
+                                <h5 class="card-title">Severely Demented</h5>
+                                <p class="card-text"style="color:white">Marks Between(16-20)</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </center>
+        </div>
+    </div>
+</div>
+{% endblock %}

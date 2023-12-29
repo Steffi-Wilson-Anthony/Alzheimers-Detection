@@ -1,0 +1,54 @@
+{% extends "patienthome.html" %}
+
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-lg-6">
+        <div class="popup_box" style="padding-top: 2rem; padding-bottom: 2px">
+            <div class="popup_inner">
+                <h4>
+                    Reschedule Appointment Details
+                </h4>
+                <center><b>{{ msg }}</b></center>
+                <form action="{{url_for('updateappointment')}}" method="post">
+                    
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <input type="text" placeholder="Your name" name="appointmentid" value="{{id}}" readonly hidden/>
+                        </div>
+
+                        <div class="col-xl-12">
+                            <input type="text" placeholder="Your name" name="patientname" value="{{name}}" readonly/>
+                        </div>
+                        <div class="col-xl-12">
+                            <input type="text" placeholder="Your name" name="doctorname" value="{{doctorname}}" readonly/>
+                        </div>
+                        <div class="col-xl-12">
+                            <input type="text" placeholder="Your age" name="patientage" value="{{age}}" readonly />
+                        </div>
+                    
+                       
+                        <div class="col-xl-6">
+                            <input placeholder="Symptoms" name="patientsymptoms" type="text" value="{{symptoms}}" />
+                        </div>
+                        <div class="col-xl-6">
+                            <input class="datepicker" placeholder="Appointment Date" name="appointmentdate" type="text"
+                            value="{{date}}" />
+                        </div>
+                        <div class="col-xl-6">
+                            <input class="timepicker" placeholder="Suitable time" name="appointmenttime" type="text" value="{{time}}"/>
+                        </div>
+                        <div class="col-xl-12">
+                            <button type="submit" class="boxed-btn3">
+                                Reschedule
+                            </button>
+                        </div>
+                    </div>
+                   
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

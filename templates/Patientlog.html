@@ -1,0 +1,35 @@
+{% extends "proceed.html" %}
+{% block content %}
+<div class="book_apointment_area" style="padding-top: 100px;padding-bottom: 160px;">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-6">
+                <div class="popup_box " style="padding-top: 30px;border-radius:20px;">
+                    <div class="popup_inner">
+                        <h4>
+                            <span>PATIENT LOGIN FORM</span>
+                        </h4>
+                        <center>{{ msg }}</center>
+                        <form action="{{url_for('Patientlog')}}" method="post">
+                            <div class="row">
+                                <div class="col-xl-12">
+                                    <input type="email" placeholder="YOUR EMAIL" name="Name">
+                                </div>
+                                <div class="col-xl-12">
+                                    <input type="password" placeholder="PASSWORD" name="Password">
+                                </div>
+                                <div class="col-xl-06" style="text-align:center;">
+                                    <button type="submit" class="btn btn-primary" style="margin-left: 14px;">Click
+                                        to Login</button>
+                                </div>
+                            </div>
+                        </form>
+                        <center>If you don't have account <a href="{{url_for('Patientreg')}}">Register</a></center>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
